@@ -132,14 +132,31 @@ def main():
         query = input("question or type 'q' to quit: ")
         if query == 'q':
             break
-        importantchunks = find_relevant_chunks(text, query, 5)
+
+        # EC: Translation Query Extra Credit
+        if language.lower() != "english":
+            translated_query = summarize(f"Translate this query into {language}: {query}")
+        else:
+            translated_query = query
+
+        # EC: Synonym Expansion Extra Credit
+        expanded_synonyms = summarize(f"List 3 synonyms or related terms for: {translated_query}")
+        combined_query = translated_query + " " + expanded_synonyms
+
+        # Use the improved query!
+        importantchunks = find_relevant_chunks(text, combined_query, 5)
+
         totalquery = ""
         for chunk in importantchunks:
             totalquery += chunk[1] + "\n"
-        totalquery += query + " please answer in" + language 
+
+        # EC: Cool feature — maintain answer in the detected language
+        totalquery += query + " please answer in " + language 
         print(totalquery)
+
         response = summarize(totalquery)
         print(response)
+
 
 
 
