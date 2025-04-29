@@ -48,6 +48,12 @@ def read_website(url):
 
 
 def load_text(filepath_or_url):
+    """
+    Loads text from a filepath or URL. Supports .txt, .html, .pdf, and online pages.
+
+    >>> isinstance(load_text("english.txt"), str)
+    True
+    """
     if ".pdf" in filepath_or_url:
         return test_read_pdf_file(filepath_or_url)
     if ".txt" in filepath_or_url:
@@ -59,6 +65,12 @@ def load_text(filepath_or_url):
 
 
 def chunk_text_by_words(text, max_words=100, overlap=50):
+    """
+    Splits text into overlapping chunks of words.
+
+    >>> chunk_text_by_words("one two three four five six", 4, 2)
+    ['one two three four', 'three four five six']
+    """
     words = text.split()
     chunks = []
     for i in range(0,len(words), max_words-overlap):
@@ -68,6 +80,12 @@ def chunk_text_by_words(text, max_words=100, overlap=50):
 
 #this finds same overlapping words only , not synonyms 
 def score_chunk(chunk, query):
+    """
+    Calculates overlap-based similarity between a text chunk and query.
+
+    >>> score_chunk("the cat sat on the mat", "cat mat")
+    0.3333333333333333
+    """
     chunkwords = chunk.split()
     querywords = query.split()
     commonwords = set(chunkwords).intersection(set(querywords))
@@ -76,6 +94,12 @@ def score_chunk(chunk, query):
 
 
 def find_relevant_chunks(text, query, num_chunks=5):
+    """
+    Returns the top N relevant text chunks given a query.
+
+    >>> isinstance(find_relevant_chunks("cat dog fish", "dog", 1), list)
+    True
+    """
     chunks = chunk_text_by_words(text, 20, 10)
     scores = []
     for chunk in chunks:
