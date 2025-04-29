@@ -17,14 +17,6 @@ This is what graders/employers expect to see.
 
 ---
 
-## Features
-
-- Chat with PDF, TXT, HTML, or web documents
-- Clean CLI interaction loop
-- Uses Groq API for LLM responses
-- Summarizes, filters, and scores document chunks
-- Built-in testing with `doctest` and GitHub Actions
-
 ## Usage
 
 python3 main.py --document_path example.txt
@@ -47,16 +39,19 @@ I'm not sure. It mentions "communication," but there are no direct references to
 
 ## Project Structure
 
-main.py                     # Entry point for running the document chat program
-requirements.txt            # Lists all dependencies
-.github/workflows/tests.yml # Continuous integration setup to automatically run tests
-tests/                      # Contains test cases to ensure program functionality
+```bash
+main.py                     # Entry point for running the document chat program  
+requirements.txt            # Lists all dependencies  
+.github/workflows/tests.yml # Continuous integration setup to automatically run tests  
+tests/                      # (Optional) test files if you have them
+```
 
 ## Features
 
-- Chat with any text document
-- Simple command-line interface
-- Robust error handling
-- Automated testing with GitHub Actions
+- Chat with PDF, TXT, HTML, or web documents
+- Clean CLI interaction loop
+- Uses Groq API for LLM responses
+- Summarizes, filters, and scores document chunks
+- Built-in testing with `doctest` and GitHub Actions
 
 
