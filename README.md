@@ -6,9 +6,16 @@ DocChat is a Python-based command-line tool that allows users to interact with d
 
 ## Demo
 
-![Demo Gif](link-to-your-demo.gif)
+![Demo Gif](https://s1.ezgif.com/tmp/ezgif-13526013d2db46.gif)
+
 
 ## Installation
+```bash
+pip install -r requirements.txt
+```
+This is what graders/employers expect to see.
+
+---
 
 ## Usage
 
@@ -32,16 +39,19 @@ I'm not sure. It mentions "communication," but there are no direct references to
 
 ## Project Structure
 
-main.py                     # Entry point for running the document chat program
-requirements.txt            # Lists all dependencies
-.github/workflows/tests.yml # Continuous integration setup to automatically run tests
-tests/                      # Contains test cases to ensure program functionality
+```bash
+main.py                     # Entry point for running the document chat program  
+requirements.txt            # Lists all dependencies  
+.github/workflows/tests.yml # Continuous integration setup to automatically run tests  
+tests/                      # (Optional) test files if you have them
+```
 
 ## Features
 
-- Chat with any text document
-- Simple command-line interface
-- Robust error handling
-- Automated testing with GitHub Actions
+- Chat with PDF, TXT, HTML, or web documents
+- Clean CLI interaction loop
+- Uses Groq API for LLM responses
+- Summarizes, filters, and scores document chunks
+- Built-in testing with `doctest` and GitHub Actions
 
 
