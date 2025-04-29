@@ -6,16 +6,7 @@ DocChat is a Python-based command-line tool that allows users to interact with d
 
 ## Demo
 
-```bash
-$ python3 docchat.py
-welcome to doc-chat!
-enter file here: english.txt
-question or type 'q' to quit: What is this file about?
-This file appears to be written in English.
-It discusses...
-
-question or type 'q' to quit: q
-
+![Demo Gif](link-to-your-demo.gif)
 
 ## Installation
 
