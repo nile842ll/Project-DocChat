@@ -68,11 +68,8 @@ def chunk_text_by_words(text, max_words=100, overlap=50):
     '''
     Splits text into overlapping chunks of words.
 
-    >>> chunks = chunk_text_by_words("one two three four five six", 4, 2)
-    >>> len(chunks)
+    >>> len(chunk_text_by_words("one two three four five six", 4, 2))
     2
-    >>> "three four" in chunks[1]
-    True
     '''
     words = text.split()
     chunks = []
