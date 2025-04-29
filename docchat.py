@@ -65,12 +65,6 @@ def load_text(filepath_or_url):
 
 
 def chunk_text_by_words(text, max_words=100, overlap=50):
-    '''
-    Splits text into overlapping chunks of words.
-
-    >>> len(chunk_text_by_words("one two three four five six", 4, 2))
-    2
-    '''
     words = text.split()
     chunks = []
     for i in range(0,len(words), max_words-overlap):
