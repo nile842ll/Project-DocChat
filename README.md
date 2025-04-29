@@ -2,7 +2,7 @@
 
 DocChat is a Python-based command-line tool that allows users to interact with documents by asking natural language questions. Powered by large language models, it retrieves relevant document sections and provides insightful (and sometimes not-so-insightful) answers.
 
-![Test Cases](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME/actions/workflows/tests.yml/badge.svg)
+![Test Cases](https://github.com/nile842ll/Project-DocChat/actions/workflows/tests.yml/badge.svg)
 
 ## Demo
 
