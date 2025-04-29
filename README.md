@@ -17,9 +17,6 @@ This is what graders/employers expect to see.
 
 ---
 
-#### 3. **Add a Features section**  
-Right before or after “Project Structure” add:
-
 ## Features
 
 - Chat with PDF, TXT, HTML, or web documents
