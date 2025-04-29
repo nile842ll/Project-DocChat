@@ -1,1 +1,9 @@
 python-dotenv
+beautifulsoup4
+groq
+requests
+os
+pdfplumber
+argparse
+requests 
+sys
