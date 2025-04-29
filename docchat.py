@@ -118,5 +118,17 @@ def main():
         print(response)
 
 
+def add(a, b):
+    """
+    >>> add(2, 3)
+    5
+    >>> add(10, -2)
+    8
+    """
+    return a + b
 
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
+    
 main()
