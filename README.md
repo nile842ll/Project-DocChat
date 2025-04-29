@@ -14,6 +14,7 @@ DocChat is a Python-based command-line tool that allows users to interact with d
 git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
 cd YOUR_REPO_NAME
 pip install -r requirements.txt
+exit
 
 ## Usage
 
