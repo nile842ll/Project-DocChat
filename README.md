@@ -12,6 +12,7 @@ DocChat is a Python-based command-line tool that allows users to interact with d
 ## Installation
 ```bash
 pip install -r requirements.txt
+```
 
 ## Usage
 
