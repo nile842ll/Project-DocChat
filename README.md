@@ -15,10 +15,37 @@ git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
 cd YOUR_REPO_NAME
 pip install -r requirements.txt
 
-Usage:
-```bash
+## Usage
+
 python3 main.py --document_path example.txt
 
 Then, simply type your question when prompted.
 
+## Example
+
+### Good answer:
+
+> What is the main argument of this document?
+
+The main argument of the document is that effective communication between humans and machines is becoming increasingly vital in modern society, as demonstrated by the growing use of AI tools.
+
+### Poor answer:
+
+> How does this document relate to quantum physics?
+
+I'm not sure. It mentions "communication," but there are no direct references to quantum physics.
+
+## Project Structure
+
+main.py                     # Entry point for running the document chat program
+requirements.txt            # Lists all dependencies
+.github/workflows/tests.yml # Continuous integration setup to automatically run tests
+tests/                      # Contains test cases to ensure program functionality
+
+## Features
+
+- Chat with any text document
+- Simple command-line interface
+- Robust error handling
+- Automated testing with GitHub Actions
 
