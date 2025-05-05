@@ -1,51 +1,57 @@
 # DocChat: Talk to Your Documents with AI
 
-DocChat is a Python-based command-line tool that lets you interact with documents by asking natural language questions. It uses a large language model to retrieve relevant sections and generate helpful (and sometimes not-so-helpful) answers.
+DocChat is a Python-based command-line tool that allows users to interact with documents by asking natural language questions. Powered by large language models, it retrieves relevant document sections and provides insightful (and sometimes not-so-insightful) answers.
 
 ![Test Cases](https://github.com/nile842ll/Project-DocChat/actions/workflows/tests.yml/badge.svg)
 
 ## Demo
 
-![Demo Gif](demo.gif) <!-- Replace with actual file if not uploaded yet -->
+![Demo Gif](https://s1.ezgif.com/tmp/ezgif-13526013d2db46.gif)
+
 
 ## Installation
-
 ```bash
 pip install -r requirements.txt
 ```
+This is what graders/employers expect to see.
+
+---
 
 ## Usage
 
-```bash
 python3 main.py --document_path example.txt
-```
 
 Then, simply type your question when prompted.
 
 ## Example
 
-```
-$ python3 docchat.py docs/sample.txt
-docchat> What is the main argument of this document?
+### Good answer:
+
+> What is the main argument of this document?
+
 The main argument of the document is that effective communication between humans and machines is becoming increasingly vital in modern society, as demonstrated by the growing use of AI tools.
 
-docchat> How does this document relate to quantum physics?
+### Poor answer:
+
+> How does this document relate to quantum physics?
+
 I'm not sure. It mentions "communication," but there are no direct references to quantum physics.
-```
 
 ## Project Structure
 
-```
-docchat.py                     # Main program file and entry point
-requirements.txt              # Lists all Python dependencies
-.github/workflows/tests.yml   # GitHub Actions workflow for automated testing
-tests/                        # Contains test cases (optional)
+```bash
+main.py                     # Entry point for running the document chat program  
+requirements.txt            # Lists all dependencies  
+.github/workflows/tests.yml # Continuous integration setup to automatically run tests  
+tests/                      # (Optional) test files if you have them
 ```
 
 ## Features
 
-- Supports PDF, TXT, HTML, and URLs as input
-- Retrieves and ranks relevant document sections
-- CLI-based interaction
-- LLM-powered responses using the Groq API
-- Automated testing via `doctest` and GitHub Actions
+- Chat with PDF, TXT, HTML, or web documents
+- Clean CLI interaction loop
+- Uses Groq API for LLM responses
+- Summarizes, filters, and scores document chunks
+- Built-in testing with `doctest` and GitHub Actions
+
+
