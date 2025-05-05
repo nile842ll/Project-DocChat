@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 import argparse
 import requests 
 import sys
-
+import simpleaudio as sa
 """
 .venv/bin/python docchat.py
 """
@@ -142,6 +142,29 @@ def summarize(text, model="llama-3.3-70b-versatile"):
     )
     return response.choices[0].message.content
 
+def playaudio(filename):
+    sound = sa.WaveObject.from_wave_file(filename)
+    playedsound = sound.play()
+    playedsound.wait_done()
+
+def summarize_tts(text, model="llama-3.3-70b-versatile"):
+    speech_file_path = "speech.wav" 
+    model = "playai-tts"
+    voice = "Fritz-PlayAI"
+    text = "I love building and shipping new features for our users!"
+    response_format = "wav"
+
+    response = client.audio.speech.create(
+        model=model,
+        voice=voice,
+        input=text,
+        response_format=response_format
+    )
+
+    response.write_to_file(speech_file_path)
+    playaudio("speech.wav")
+
+
 def getlanguage(file):
     """
     Tells you language of file
@@ -155,8 +178,11 @@ def getlanguage(file):
     return response
 
 
+
 def main():
     print("welcome to doc-chat!")
+    print("TTS or regular")
+    answer = input()
     file = input("enter file here: ")
     text = load_text(file)
     language = getlanguage(file)
@@ -170,8 +196,11 @@ def main():
             totalquery += chunk[1] + "\n"
         totalquery += query + " please answer in" + language 
         print(totalquery)
-        response = summarize(totalquery)
-        print(response)
+        if answer == "TTS":
+            summarize_tts(totalquery)
+        else:
+            response = summarize(totalquery)
+            print(response)
 
 
 
@@ -180,3 +209,4 @@ if __name__ == "__main__":
     import doctest
     doctest.testmod()
     main()
+
