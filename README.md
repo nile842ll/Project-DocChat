@@ -45,8 +45,13 @@ tests/                        # Contains test cases (optional)
 
 ## Features
 
-- Supports PDF, TXT, HTML, and URLs as input
-- Retrieves and ranks relevant document sections
-- CLI-based interaction
-- LLM-powered responses using the Groq API
-- Automated testing via `doctest` and GitHub Actions
+## Features
+
+- Load documents from TXT, HTML, PDF, or URLs
+- Automatically splits text into overlapping chunks for processing
+- Scores and ranks chunks based on query similarity
+- CLI-based chat loop that answers questions using document context
+- Prompts are dynamically constructed using relevant document excerpts
+- LLM responses powered by the Groq API
+- Automated testing with `doctest` and GitHub Actions
+
