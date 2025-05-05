@@ -11,9 +11,11 @@ import simpleaudio as sa
 .venv/bin/python docchat.py
 """
 
-load_dotenv()
-client = Groq(api_key=os.getenv("GroqAPIKEY"))
-print("Loaded API Key:", repr(os.getenv("GroqAPIKEY")))
+load_dotenv()  # still allows local dev
+api_key = os.getenv("GroqAPIKEY")
+if not api_key:
+    raise ValueError("Missing GroqAPIKEY in environment variables")
+client = Groq(api_key=api_key)
 
 
 def test_read_pdf_file(path):
