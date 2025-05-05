@@ -54,4 +54,4 @@ tests/                        # Contains test cases (optional)
 - Prompts are dynamically constructed using relevant document excerpts
 - LLM responses powered by the Groq API
 - Automated testing with `doctest` and GitHub Actions
-
+- Works with TTS (text-to-speech)
