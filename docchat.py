@@ -14,14 +14,20 @@ import sys
 load_dotenv()
 client = Groq(api_key=os.getenv("GroqAPIKEY"))
 
-'''
+
 def test_read_pdf_file(path):
+    """
+    Read PDFs
+    >>> test_read_pdf_file("research_paper.pdf")[:20]
+    'DOCSPLIT: Simple Con'
+
+    """
     text = ''
     with pdfplumber.open(path) as pdf:
         for page in pdf.pages:
             text += page.extract_text()
     return text
-'''
+
 
 def test_read_file(path):
     """
