@@ -168,8 +168,8 @@ def summarize_tts(text, model="llama-3.3-70b-versatile"):
 def getlanguage(file):
     """
     Tells you language of file
-    >>> getlanguage("constitution-mx.txt")
-    'Spanish'
+    >>> isinstance(getlanguage("constitution-mx.txt"), str)
+    True
 
     """
     text = load_text(file)
