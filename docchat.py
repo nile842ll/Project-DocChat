@@ -24,11 +24,22 @@ def test_read_pdf_file(path):
 '''
 
 def test_read_file(path):
+    """
+    Read file
+    >>> test_read_file("declaration2")[:20]
+    'In Congress, July 4,'
+    """
     with open(path, "r") as file:
         text = file.read()
     return text
 
 def test_read_html_file(path):
+    """
+    Read from html file
+    >>> test_read_html_file("dracula.html")[:20]
+    'The Project Gutenber'
+
+    """
     text = ''
     with open(path, 'r', encoding='utf-8') as file:
         html_content = file.read()
@@ -37,13 +48,18 @@ def test_read_html_file(path):
     return text
 
 def read_website(url):
+    """
+    Gather text from website
+    >>> read_website("http://NOTREALWERWRewrfdvdWERE.COM")
+    failtoread http://NOTREALWERWRewrfdvdWERE.COM
+    """
     try: 
         response = requests.get(url)
         soup = BeautifulSoup(response.text, 'html.parser')
         text = soup.get_text(separator=' ', strip=True)
         return text   
     except Exception as e:
-        print("failtoread", url, e)
+        print("failtoread", url)
 
 
 
@@ -51,7 +67,7 @@ def load_text(filepath_or_url):
     """
     Loads text from a filepath or URL. Supports .txt, .html, .pdf, and online pages.
 
-    >>> isinstance(load_text("english.txt"), str)
+    >>> isinstance(load_text("dracula_chapter1.txt"), str)
     True
     """
     if ".pdf" in filepath_or_url:
@@ -65,6 +81,11 @@ def load_text(filepath_or_url):
 
 
 def chunk_text_by_words(text, max_words=100, overlap=50):
+    """
+    Splits text into an amount of words
+    >>> chunk_text_by_words("the cat sat on the mat", 3, 0)
+    ['the cat sat', 'on the mat']
+    """
     words = text.split()
     chunks = []
     for i in range(0,len(words), max_words-overlap):
@@ -104,6 +125,11 @@ def find_relevant_chunks(text, query, num_chunks=5):
 
 
 def summarize(text, model="llama-3.3-70b-versatile"):
+    """
+    Summarizes text using LLM 
+    >>> summarize("say the word poem one time in lowercase")
+    'poem'
+    """
     response = client.chat.completions.create(
         model=model,
         messages=[{"role": "user", "content": f"{text}"}]
@@ -111,6 +137,12 @@ def summarize(text, model="llama-3.3-70b-versatile"):
     return response.choices[0].message.content
 
 def getlanguage(file):
+    """
+    Tells you language of file
+    >>> getlanguage("constitution-mx.txt")
+    'Spanish'
+
+    """
     text = load_text(file)
     chunk = chunk_text_by_words(text, 100)[0]
     response = summarize(chunk+"what language is the above text in - answer in one word")
