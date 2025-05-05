@@ -6,7 +6,8 @@ DocChat is a Python-based command-line tool that lets you interact with document
 
 ## Demo
 
-![Demo Gif](demo.gif) <!-- Replace with actual file if not uploaded yet -->
+!![download](https://github.com/user-attachments/assets/048e5145-5682-4425-83f6-ecca29bdb264)
+
 
 ## Installation
 
