@@ -30,11 +30,13 @@ def test_read_pdf_file(path):
 
 
 def test_read_file(path):
-    """
-    Read file
-    >>> test_read_file("declaration2")[:20]
-    'In Congress, July 4,'
-    """
+    '''
+    Reads a plain text file.
+
+    >>> with open("temp.txt", "w") as f: f.write("hello world")
+    >>> test_read_file("temp.txt")
+    'hello world'
+    '''
     with open(path, "r") as file:
         text = file.read()
     return text
