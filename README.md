@@ -18,7 +18,7 @@ pip install -r requirements.txt
 ## Usage
 
 ```bash
-python3 main.py --document_path example.txt
+python3 docchat.py --document_path example.txt
 ```
 
 Then, simply type your question when prompted.
