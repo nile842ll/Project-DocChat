@@ -33,7 +33,7 @@ def test_read_file(path):
     '''
     Reads a plain text file.
 
-    >>> with open("temp.txt", "w") as f: f.write("hello world")
+    >>> with open("temp.txt", "w") as f: f.write("hello world")  # doctest: +ELLIPSIS
     >>> test_read_file("temp.txt")
     'hello world'
     '''
