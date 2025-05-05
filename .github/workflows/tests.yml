@@ -2,13 +2,14 @@ name: tests
 
 on:
   push:
-    branches: ['*']
+    branches: [!*]
 
 jobs:
   tests:
     runs-on: ubuntu-latest
     env:
-      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      GroqAPIKEY: ${{ secrets.GROQ_API_KEY }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
