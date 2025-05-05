@@ -32,7 +32,7 @@ The main argument of the document is that effective communication between humans
 
 docchat> How does this document relate to quantum physics?
 I'm not sure. It mentions "communication," but there are no direct references to quantum physics.
-```
+
 
 ## Project Structure
 
