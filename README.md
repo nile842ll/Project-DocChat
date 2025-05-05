@@ -25,13 +25,14 @@ Then, simply type your question when prompted.
 
 ## Example
 
-```bash
+```
 $ python3 docchat.py docs/sample.txt
 docchat> What is the main argument of this document?
 The main argument of the document is that effective communication between humans and machines is becoming increasingly vital in modern society, as demonstrated by the growing use of AI tools.
 
 docchat> How does this document relate to quantum physics?
 I'm not sure. It mentions "communication," but there are no direct references to quantum physics.
+```
 
 
 ## Project Structure
